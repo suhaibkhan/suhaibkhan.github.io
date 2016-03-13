@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div id="container">
+
+  <div id="containerOverlay"></div>
+
+  <div id="containerContent">
+    <header class="containerContent-header">
+      <h1>Penned down by me</h1>
+    </header>
+    {% for post in site.posts %}
+    <article class="postlink">
+      <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% include sidebar.html %}
+
+</div>
+
+<script src="js/main.js"></script>

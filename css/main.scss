@@ -3,24 +3,52 @@
 ---
 @charset "utf-8";
 
-
+// Color Palette
+$color1: #1E1E1E;
+$color2: #5A8F29;
+$color3: #FFFFFF;
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: 'Raleway', sans-serif;
+$base-font-size:   1em;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
+
+$small-font-size:        $base-font-size * 0.875;
+$social-icon-font-size:  1.8em;
+$sidebar-menu-font-size: 25px;
+$banner-title-font-size: 1.2em;
+$banner-desc-font-size:  2em;
+
+$article-list-title-font-size: 1.3em;
+$article-list-head-font-size:  1.8em;
+
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$text-color:        $color1;
+$background-color:  $color3;
+$highlight-color:   $color2;
+
+$overlay-bac-color: #000000;
+
+$banner-bac-color:       $color1;
+$banner-color:           $color3;
+$banner-highlight-color: lighten($highlight-color, 20%);
+
+$sidebar-bac-color :      $color2;
+$sidebar-color :          $color3;
+$sidebar-highlight-color: darken($sidebar-bac-color, 20%);
+
+$article-list-head-bac-color : $color1;
+$article-list-head-color     : $color3;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+
+$sidebar-width: 260px;
+$sidebar-init-width: 45px;
 
 // Width of the content area
 $content-width:    800px;
@@ -29,6 +57,16 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 
+@mixin blur($amount) {
+  filter:blur($amount);
+  -webkit-filter: blur($amount);
+  -moz-filter: blur($amount);
+}
+
+@mixin transition($duration) {
+  -webkit-transition: all $duration ease;
+  transition: all $duration ease;
+}
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -43,11 +81,13 @@ $on-laptop:        800px;
     }
 }
 
-
+// import font
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "typed"
 ;

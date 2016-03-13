@@ -2,22 +2,23 @@
 layout: default
 ---
 
-<div class="home">
+<div id="container">
 
-  <h1 class="page-heading">Posts</h1>
+  <div id="bannerBac"></div>
+  <img id="containerBac" src="images/DSC_5001_bw.jpg" alt="" />
+  <div id="containerOverlay"></div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div id="banner">
+    <h2 class="title"><a href="/" style="opacity: 0">{{ site.title }}</a></h2>
+    <div id="bannercontent" style="opacity: 0">
+      <h1 class="description">{{ site.description }}</h1>
+      {% include social-links.html %}
+    </div>
+  </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  {% include sidebar.html %}
 
 </div>
+
+<script src="js/typed.min.js"></script>
+<script src="js/main.js"></script>
