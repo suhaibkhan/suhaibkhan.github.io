@@ -168,7 +168,7 @@
 
    &.visible {
      right: 0;
-     ul {
+     #sidebar-content {
        opacity: 1;
      }
      #menuBtn {
@@ -188,15 +188,18 @@
      }
    }
 
-   // menu
-   ul {
-     clear: both;
-     display: block;
-     list-style: none;
+   #sidebar-content{
      opacity: 0;
      position: absolute;
+     width: 100%;
      left:0;
      top:0;
+   }
+
+   // menu
+   ul {
+     display: block;
+     list-style: none;
      text-transform: uppercase;
      li {
        display: block;

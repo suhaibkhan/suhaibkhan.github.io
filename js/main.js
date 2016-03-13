@@ -68,8 +68,8 @@ $(function(){
       }
 
       var sideCenterAdjust = Math.max($('#menuCloseBtn').outerHeight(true),
-        Math.floor(($sidebar.height()/2) - ($sidebar.find('ul').height()/2)));
-      $sidebar.find('ul').css('top', sideCenterAdjust + 'px');
+        Math.floor(($sidebar.height()/2) - ($sidebar.find('#sidebar-content').height()/2)));
+      $sidebar.find('#sidebar-content').css('top', sideCenterAdjust + 'px');
 
       if (bannerPresent){
         var subTitleCenterAdjust = Math.max($bannerTitle.outerHeight(true),
