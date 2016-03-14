@@ -5,10 +5,10 @@
 }
 
 #container {
-  height: 100%;
-  width: 100%;
-  //overflow: hidden;
+  overflow: auto;
   position: relative;
+  min-height: 100%;
+  width: 100%;
 }
 
 /**
@@ -93,7 +93,9 @@
 
    .description {
      font-size: $banner-desc-font-size;
-     margin: 0 $sidebar-init-width + 20px 0 20px;
+     margin-top: 0;
+     margin-right: $sidebar-init-width + 20px;
+     margin-left: 20px;
      text-align: center;
    }
  }
@@ -102,10 +104,8 @@
  * Content
  */
 #containerContent{
-  overflow: auto;
   margin: 0 auto;
   padding: 0px 0px + $sidebar-init-width 0px 0px;
-  height: 100%;
   max-width: $content-width;
   text-align: left;
 
@@ -115,22 +115,34 @@
 
   .containerContent-header {
     background-color: $article-list-head-bac-color;
+    border-bottom: 1px solid $article-list-head-border-color;
     color: $article-list-head-color;
-    padding: $spacing-unit;
-    @extend %vertical-rhythm;
+    margin: $spacing-unit 10px $spacing-unit * 1.5 10px;
 
-    h1 {
-      font-size: $article-list-head-font-size;
-      text-align: center;
-      text-transform: capitalize;
+    .headerblock {
+
+      display: inline-block;
       margin-bottom: 0px;
+      vertical-align: baseline;
+
+      &.left {
+        font-size: $article-list-headl-font-size;
+        width: 40%;
+        text-align: left;
+      }
+      &.right {
+        font-size: $article-list-headr-font-size;
+        width: 60%;
+        text-align: right;
+      }
     }
   }
 
   .postlink {
     display: block;
     border-bottom: 1px dashed #ccc;
-    padding: 0px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     @extend %vertical-rhythm;
 
     .header {
@@ -144,9 +156,10 @@
     .date{
       color: $highlight-color;
       display: inline-block;
+      margin-bottom: 0px;
       text-align: right;
       vertical-align: baseline;
-      width: 24%;
+      width: 25%;
     }
   }
 
@@ -163,7 +176,7 @@
    width: $sidebar-width;
    right: $sidebar-init-width - $sidebar-width;
    top: 0;
-   @include transition(0.3s);
+   @include transition(right, 0.3s);
    z-index: 4; // above containerOverlay
 
    &.visible {

@@ -20,8 +20,9 @@ $sidebar-menu-font-size: 25px;
 $banner-title-font-size: 1.2em;
 $banner-desc-font-size:  2em;
 
-$article-list-title-font-size: 1.3em;
-$article-list-head-font-size:  1.8em;
+$article-list-title-font-size:  1.3em;
+$article-list-headl-font-size:  1em;
+$article-list-headr-font-size:  1.3em;
 
 
 $spacing-unit:     30px;
@@ -40,8 +41,9 @@ $sidebar-bac-color :      $color2;
 $sidebar-color :          $color3;
 $sidebar-highlight-color: darken($sidebar-bac-color, 20%);
 
-$article-list-head-bac-color : $color1;
-$article-list-head-color     : $color3;
+$article-list-head-bac-color    : $color3;
+$article-list-head-color        : $color2;
+$article-list-head-border-color : lighten($article-list-head-color, 20%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -63,9 +65,9 @@ $on-laptop:        800px;
   -moz-filter: blur($amount);
 }
 
-@mixin transition($duration) {
-  -webkit-transition: all $duration ease;
-  transition: all $duration ease;
+@mixin transition($prop, $duration) {
+  -webkit-transition: $prop $duration ease;
+  transition: $prop $duration ease;
 }
 
 // Use media queries like this:

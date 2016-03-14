@@ -1,5 +1,6 @@
 ---
 layout: default
+heading: "Thoughts and Writings"
 ---
 
 <div id="container">
@@ -8,12 +9,11 @@ layout: default
 
   <div id="containerContent">
     <header class="containerContent-header">
-      <h1>Penned down by me</h1>
+      <span class="headerblock left">{{  site.title }}</span><span class="headerblock right">{{ page.heading }}</span></h1>
     </header>
     {% for post in site.posts %}
     <article class="postlink">
-      <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-      <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+        <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2><p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
     </article>
     {% endfor %}
   </div>
