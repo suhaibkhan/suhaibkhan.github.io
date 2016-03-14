@@ -140,7 +140,7 @@
 
   .postlink {
     display: block;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed $article-list-border-color;
     margin-left: 10px;
     margin-right: 10px;
     @extend %vertical-rhythm;
@@ -160,6 +160,29 @@
       text-align: right;
       vertical-align: baseline;
       width: 25%;
+    }
+  }
+
+  .post {
+    border-bottom: 1px dashed $article-list-border-color;
+    display: block;
+    margin-top: $spacing-unit;
+    margin-left: 10px;
+    margin-right: 10px;
+    @extend %vertical-rhythm;
+
+    .post-header {
+      .title{
+        font-size: $post-title-font-size;
+        margin-bottom: 0px;
+      }
+      .date{
+        color: $highlight-color;
+      }
+    }
+    .post-content {
+      margin-left: $spacing-unit / 2;
+      margin-top: $spacing-unit / 2;
     }
   }
 

@@ -24,6 +24,7 @@ $article-list-title-font-size:  1.3em;
 $article-list-headl-font-size:  1em;
 $article-list-headr-font-size:  1.3em;
 
+$post-title-font-size: 1.8em;
 
 $spacing-unit:     30px;
 
@@ -44,6 +45,7 @@ $sidebar-highlight-color: darken($sidebar-bac-color, 20%);
 $article-list-head-bac-color    : $color3;
 $article-list-head-color        : $color2;
 $article-list-head-border-color : lighten($article-list-head-color, 20%);
+$article-list-border-color : #CCCCCC;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

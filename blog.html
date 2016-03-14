@@ -1,25 +1,13 @@
 ---
-layout: default
+title: Blog
 heading: "Thoughts and Writings"
+order: 2
 ---
-
-<div id="container">
-
-  <div id="containerOverlay"></div>
-
-  <div id="containerContent">
-    <header class="containerContent-header">
-      <span class="headerblock left">{{  site.title }}</span><span class="headerblock right">{{ page.heading }}</span></h1>
-    </header>
-    {% for post in site.posts %}
-    <article class="postlink">
-        <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2><p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
-    </article>
-    {% endfor %}
-  </div>
-
-  {% include sidebar.html %}
-
-</div>
-
-<script src="js/main.js"></script>
+<header class="containerContent-header">
+  <span class="headerblock left">{{  site.title }}</span><span class="headerblock right">{{ page.heading }}</span></h1>
+</header>
+{% for post in site.posts %}
+<article class="postlink">
+    <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2><p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
+</article>
+{% endfor %}

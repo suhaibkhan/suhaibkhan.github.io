@@ -3,23 +3,22 @@
   <a id="menuCloseBtn" class="icon-times navBtn" title="Close" href="#"></a>
   <div id="sidebar-content">
     <ul>
-
-      {% if page.name != 'index.html' %}
-        <li><a href="/" title="Home">Home</a></li>
-      {% else %}
-        <li><span>Home</span></li>
-      {% endif %}
-
-      {% if page.name != 'blog.html' %}
-        <li><a href="/blog.html" title="Blog">Blog</a></li>
-      {% else %}
-        <li><span>Blog</span></li>
-      {% endif %}
-
-      <li><a href="#resume" title="Resume">Resume</a></li>
+        {% assign sorted_pages = site.pages | sort:"order" %}
+        {% for my_page in sorted_pages %}
+          {% if my_page.title %}
+            {% if page.name != my_page.name %}
+              <li><a href="{{ my_page.url | prepend: site.baseurl }}" title="{{ my_page.title }}">{{ my_page.title }}</a></li>
+            {% else %}
+              <li><span>{{ my_page.title }}</span></li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
     </ul>
+
     {% if page.name != 'index.html' %}
       {% include social-links.html %}
     {% endif %}
+
   </div>
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 </aside>
