@@ -166,10 +166,7 @@
   .post {
     border-bottom: 1px dashed $article-list-border-color;
     display: block;
-    margin-top: $spacing-unit;
-    margin-left: 10px;
-    margin-right: 10px;
-    @extend %vertical-rhythm;
+    margin: $spacing-unit 10px;
 
     .post-header {
       .title{
@@ -180,9 +177,29 @@
         color: $highlight-color;
       }
     }
+
     .post-content {
-      margin-left: $spacing-unit / 2;
       margin-top: $spacing-unit / 2;
+    }
+
+    .post-nav{
+      @extend %vertical-rhythm;
+      span {
+        font-size: $post-nav-font-size;
+        display: inline-block;
+        vertical-align: baseline;
+        width: 50%;
+
+        &.prev {
+          text-align: left;
+        }
+        &.next {
+          text-align: right;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
