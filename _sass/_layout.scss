@@ -195,7 +195,7 @@
 
     .post-nav{
       @extend %vertical-rhythm;
-      span {
+      .block {
         font-size: $post-nav-font-size;
         display: inline-block;
         vertical-align: baseline;
@@ -207,6 +207,17 @@
         &.next {
           text-align: right;
         }
+      }
+      .icon-angle-double-left, .icon-angle-double-right{
+        display: block;
+        font-size: $post-nav-icon-font-size;
+        margin-top: -3px;
+      }
+      .icon-angle-double-right {
+        float: right;
+      }
+      .icon-angle-double-left {
+        float: left;
       }
     }
   }

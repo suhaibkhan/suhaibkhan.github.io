@@ -11,6 +11,6 @@ layout: page
     {{ content }}
   </div>
   <div class="post-nav">
-    <span class="prev">{% if page.previous.url %}<a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>{% endif %}</span><span class="next">{% if page.next.url %}<a href="{{page.next.url}}">{{page.next.title}} &raquo;</a>{% endif %}</span>
+    <span class="block prev">{% if page.previous.url %}<span class="icon-angle-double-left"></span><a href="{{page.previous.url}}">{{page.previous.title}}</a>{% endif %}</span><span class="block next">{% if page.next.url %}<a href="{{page.next.url}}">{{page.next.title}}</a><span class="icon-angle-double-right"></span>{% endif %}</span>
   </div>
 </article>
