@@ -64,11 +64,9 @@ $(function(){
     $window.resize(function(){
       if (bacImagePresent){
         if (($window.width() / $window.height()) < aspectRatio){
-          $containerBac.css('width', '');
-          $containerBac.css('height', '100%');
+          $containerBac.removeClass().addClass('bgheight');
         }else{
-          $containerBac.css('height', '');
-          $containerBac.css('width', '100%');
+          $containerBac.removeClass().addClass('bgwidth');
         }
       }
 

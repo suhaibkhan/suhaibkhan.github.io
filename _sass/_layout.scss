@@ -22,6 +22,8 @@
   @include blur(3px);
   // width and height are controlled from js
   z-index: 2; // above bannerBac
+  &.bgwidth { width: 100%; }
+  &.bgheight { height: 100%; }
 }
 
 /**
