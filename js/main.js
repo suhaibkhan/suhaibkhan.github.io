@@ -6,12 +6,13 @@ $(function(){
   var $container = $('#container');
   var $containerOverlay = $('#containerOverlay');
   var $sidebar = $('#sidebar');
+  var sidebarDefaultRight = $('#sidebar').css('right');
 
   var bannerPresent = false, $bannerTitle = null, $bannerContent = null;
   var $banner = $('#banner');
   if ($banner.length > 0){
     bannerPresent = true;
-    $bannerTitle = $banner.find('h2');
+    $bannerTitle = $banner.find('.title');
     $bannerContent = $banner.find('#bannercontent');
   }
 
@@ -22,6 +23,8 @@ $(function(){
   }
 
   $('#menuBtn').click(function(){
+    $('body').css('overflow', 'hidden'); // disable scrolling
+    $sidebar.velocity({'right' : 0});
     $sidebar.addClass('visible');
     $containerOverlay.show();
     if (bannerPresent){
@@ -33,6 +36,8 @@ $(function(){
   });
 
   $('#menuCloseBtn').click(function(){
+    $('body').css('overflow', '');
+    $sidebar.velocity({'right' : sidebarDefaultRight});
     $sidebar.removeClass('visible');
     $containerOverlay.hide();
     if (bannerPresent){
@@ -81,14 +86,16 @@ $(function(){
 
     if (bannerPresent){
       var subTitle = $bannerTitle.find('a').text();
-      $bannerTitle.find('a').html('').css('opacity', 1);
+      $bannerTitle.css('opacity', 1).find('a').html('');
       $bannerTitle.find('a').typed({
         strings: [subTitle],
         cursorChar: '|',
-        typeSpeed: 150,
+        typeSpeed: 100,
         onStringTyped: function() {
           $bannerTitle.find('.typed-cursor').hide();
-          $bannerContent.animate({'opacity' : 1});
+          $banner.find('.description').velocity({'opacity' : 1, 'margin-top' : 0}, function(){
+            $banner.find('.social-links').css('opacity', 1);
+          });
         }
       });
     }

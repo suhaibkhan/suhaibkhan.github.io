@@ -17,8 +17,10 @@ $base-line-height: 1.5;
 $small-font-size:        $base-font-size * 0.875;
 $social-icon-font-size:  1.8em;
 $sidebar-menu-font-size: 25px;
-$banner-title-font-size: 1.2em;
-$banner-desc-font-size:  2em;
+$banner-title-font-size: 3em;
+$banner-desc-font-size:  1.2em;
+
+$banner-title-font-family: 'Oswald', sans-serif;
 
 $article-list-title-font-size:  1.3em;
 $article-list-headl-font-size:  1em;
@@ -53,7 +55,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $sidebar-width: 260px;
-$sidebar-init-width: 45px;
+$sidebar-init-width: 55px;
 
 // Width of the content area
 $content-width:    800px;
@@ -88,6 +90,7 @@ $on-laptop:        800px;
 
 // import font
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

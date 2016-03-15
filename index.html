@@ -11,9 +11,9 @@ order: 1
   <div id="containerOverlay"></div>
 
   <div id="banner">
-    <h2 class="title"><a href="/" style="opacity: 0">{{ site.title }}</a></h2>
-    <div id="bannercontent" style="opacity: 0">
-      <h1 class="description">{{ site.description }}</h1>
+    <div id="bannercontent">
+      <h1 class="title"><a href="{{ page.url | prepend: site.baseurl }}">Hi, I am {{ site.title }}.</a></h2>
+      <h2 class="description">{{ site.description }}</h1>
       {% include social-links.html %}
     </div>
   </div>

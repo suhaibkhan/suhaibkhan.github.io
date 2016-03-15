@@ -70,6 +70,7 @@
 
    a {
      color: $banner-color;
+     text-decoration: none;
      &:hover {
        color: $banner-highlight-color;
      }
@@ -82,20 +83,27 @@
      left: 0;
    }
 
+   .social-links {
+     opacity: 0;
+     margin: 1.5 * $spacing-unit $sidebar-init-width + 20px 1.5 * $spacing-unit 20px;
+   }
+
    .title {
      display: block;
+     font-family: $banner-title-font-family;
      font-size: $banner-title-font-size;
      font-weight: bold;
-     letter-spacing: 1px;
-     margin: 20px $sidebar-init-width + 20px 20px 20px;
+     opacity: 0;
+     margin: 0px $sidebar-init-width + 20px 0px 20px;
      text-transform: uppercase;
+     text-align: center;
    }
 
    .description {
      font-size: $banner-desc-font-size;
-     margin-top: 0;
-     margin-right: $sidebar-init-width + 20px;
-     margin-left: 20px;
+     opacity: 0;
+     margin: 0px $sidebar-init-width + 20px $spacing-unit 20px;
+     margin-top: -30px;
      text-align: center;
    }
  }
@@ -152,6 +160,9 @@
       text-align: left;
       vertical-align: baseline;
       width: 75%;
+      a {
+        text-decoration: none;
+      }
     }
     .date{
       color: $highlight-color;
@@ -196,9 +207,6 @@
         &.next {
           text-align: right;
         }
-        a {
-          text-decoration: underline;
-        }
       }
     }
   }
@@ -216,11 +224,11 @@
    width: $sidebar-width;
    right: $sidebar-init-width - $sidebar-width;
    top: 0;
-   @include transition(right, 0.3s);
+   // @include transition(right, 0.3s);
    z-index: 4; // above containerOverlay
 
    &.visible {
-     right: 0;
+     //right: 0;
      #sidebar-content {
        opacity: 1;
      }
@@ -267,7 +275,7 @@
    .navBtn {
      display: block;
      font-size: $sidebar-menu-font-size;
-     padding: 20px 10px;
+     padding: $spacing-unit / 2;
      position: absolute;
      left:0;
      top:0;
