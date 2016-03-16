@@ -23,7 +23,7 @@ $(function(){
   }
 
   $('#menuBtn').click(function(){
-    $('body').css('overflow', 'hidden'); // disable scrolling
+    //$('body').css('overflow', 'hidden'); // disable scrolling
     $sidebar.velocity({'right' : 0});
     $sidebar.addClass('visible');
     $containerOverlay.show();
@@ -36,7 +36,7 @@ $(function(){
   });
 
   $('#menuCloseBtn').click(function(){
-    $('body').css('overflow', '');
+    //$('body').css('overflow', '');
     $sidebar.velocity({'right' : sidebarDefaultRight});
     $sidebar.removeClass('visible');
     $containerOverlay.hide();
