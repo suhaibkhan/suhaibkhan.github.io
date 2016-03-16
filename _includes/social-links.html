@@ -4,4 +4,7 @@
   <a href="{{ site.author.facebook_url }}" target="_blank" class="icon-facebook-square"></a>
   <a href="{{ site.author.googleplus_url }}" target="_blank" class="icon-google-plus-square"></a>
   <a href="mailto:{{ site.author.email }}" class="icon-envelope-square"></a>
+  {% if include.showbloglink %}
+  <a href="{{ "/blog" | prepend: site.baseurl}}" class="round-button">Blog</a>
+  {% endif %}
 </div>

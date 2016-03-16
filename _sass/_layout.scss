@@ -4,6 +4,20 @@
   text-align: center;
 }
 
+.round-button {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  /* future proofing */
+  -khtml-border-radius: 7px;
+  border: 1px solid;
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 2px 5px;
+  text-transform: uppercase;
+}
+
 #container {
   overflow: auto;
   position: relative;
@@ -88,6 +102,10 @@
    .social-links {
      opacity: 0;
      margin: 1.5 * $spacing-unit $sidebar-init-width + 20px 1.5 * $spacing-unit 20px;
+     .round-button {
+       font-size: 16px;
+       vertical-align: text-top;
+     }
    }
 
    .title {
