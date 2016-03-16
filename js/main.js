@@ -6,7 +6,9 @@ $(function(){
   var $container = $('#container');
   var $containerOverlay = $('#containerOverlay');
   var $sidebar = $('#sidebar');
-  var sidebarDefaultRight = $('#sidebar').css('right');
+
+  var sidebarDefaultRight = $sidebar.css('right');
+  var sidebarWidth = $sidebar.width();
 
   var bannerPresent = false, $bannerTitle = null, $bannerContent = null;
   var $banner = $('#banner');
@@ -14,6 +16,10 @@ $(function(){
     bannerPresent = true;
     $bannerTitle = $banner.find('.title');
     $bannerContent = $banner.find('#bannercontent');
+
+    // hide sidebar for slide in animation in home
+    $sidebar.css('right', (-sidebarWidth) + 'px');
+    $sidebar.css('opacity', '1');
   }
 
   var contentPresent = false;
@@ -83,6 +89,10 @@ $(function(){
     }).trigger('resize');
 
     if (bannerPresent){
+
+      // hide loading
+      $('#containerLoading').hide();
+
       var subTitle = $bannerTitle.find('a').text();
       $bannerTitle.css('opacity', 1).find('a').html('');
       $bannerTitle.find('a').typed({
@@ -91,6 +101,10 @@ $(function(){
         typeSpeed: 100,
         onStringTyped: function() {
           $bannerTitle.find('.typed-cursor').hide();
+
+          // slide in sidebar
+          $sidebar.velocity({'right' : sidebarDefaultRight});
+
           $banner.find('.description').velocity({'opacity' : 1, 'margin-top' : 0}, function(){
             $banner.find('.social-links').css('opacity', 1);
           });

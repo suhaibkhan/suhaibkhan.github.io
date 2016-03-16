@@ -25,6 +25,15 @@
   width: 100%;
 }
 
+#containerLoading{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
 /**
  * Container background image
  */

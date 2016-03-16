@@ -5,7 +5,9 @@ order: 1
 ---
 
 <div id="container">
-
+  <div id="containerLoading">
+    <div class="spinner"></div>
+  </div>
   <div id="bannerBac"></div>
   <img id="containerBac" src="images/DSC_5001_bw.jpg" alt="" />
   <div id="containerOverlay"></div>
@@ -18,7 +20,7 @@ order: 1
     </div>
   </div>
 
-  {% include sidebar.html %}
+  {% include sidebar.html style="opacity: 0" %}
 
 </div>
 
