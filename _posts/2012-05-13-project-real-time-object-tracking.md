@@ -3,7 +3,7 @@ title: "Real-time Object Tracking for Autonomous Vehicles"
 date:   2012-05-13 21:00:00 +0530
 ---
 
-![Autonomous Vehicle](/images/project.jpg)
+{% include image.html src="/images/project.jpg" align="center" caption="Object Tracking Robot" imgstyle="max-width: 480px" %}
 
 Real-time Object Tracking for Autonomous Vehicles, its the title of our B.Tech final year project, just completed. The project focuses on unsupervised tracking of objects in a video based on their color histogram. Apart from a B.Tech final year project, it was a thrilling experience for me. It was my decision to do a project related to image processing and other members in my project group also agreed to go with image processing as it’s an interesting domain. This project helped us a lot in familiarizing some important concepts in image processing and we learned a lot about image processing through this project.
 

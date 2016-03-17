@@ -61,12 +61,25 @@ img {
 /**
  * Figures
  */
-figure > img {
+ .figure, figure{
+   background-color: lighten($grey-color-light, 8%);
+   border: 1px solid $grey-color-light;
+   border-radius: 3px;
+   display: inline-block;
+   padding: 10px;
+   @extend %vertical-rhythm;
+ }
+
+figure > img, .figure > img {
     display: block;
+    margin: 0 auto;
 }
 
-figcaption {
-    font-size: $small-font-size; // TO VALIDATE
+figcaption, .figure > .caption {
+    display: block;
+    font-size: $small-font-size;
+    text-align: center;
+    padding-top: 5px;
 }
 
 
@@ -114,7 +127,7 @@ a {
  * Blockquotes
  */
 blockquote {
-    background-color: darken($background-color, 5%);
+    background-color: lighten($grey-color-light, 8%);
     color: $grey-color-dark;
     border-left: 10px solid $highlight-color;
     padding-left: $spacing-unit / 2;
@@ -135,7 +148,7 @@ code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: lighten($grey-color-light, 8%);
 }
 
 code {
