@@ -166,3 +166,9 @@ pre {
         clear: both;
     }
 }
+
+.vertical-align-fix {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
