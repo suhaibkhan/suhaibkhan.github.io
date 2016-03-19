@@ -62,7 +62,7 @@ img {
  * Figures
  */
  .figure, figure{
-   background-color: lighten($grey-color-light, 8%);
+   background-color: lighten($grey-color-light, 6%);
    border: 1px solid $grey-color-light;
    border-radius: 3px;
    display: inline-block;
@@ -127,7 +127,7 @@ a {
  * Blockquotes
  */
 blockquote {
-    background-color: lighten($grey-color-light, 8%);
+    background-color: lighten($grey-color-light, 6%);
     color: $grey-color-dark;
     border-left: 10px solid $highlight-color;
     padding-left: $spacing-unit / 2;
@@ -148,7 +148,7 @@ code {
     font-size: 14px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    //background-color: lighten($grey-color-light, 8%);
+    //background-color: lighten($grey-color-light, 6%);
 }
 
 code {
