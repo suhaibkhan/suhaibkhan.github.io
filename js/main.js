@@ -81,8 +81,8 @@ $(function(){
       $sidebar.find('#sidebar-content').css('top', sideCenterAdjust + 'px');
 
       if (bannerPresent){
-        var subTitleCenterAdjust = Math.max($bannerTitle.outerHeight(true),
-          Math.floor((($banner.height() - $bannerContent.outerHeight(true))/2)));
+        var subTitleCenterAdjust =
+          Math.floor((($banner.height() - $bannerContent.outerHeight(true))/2));
         $bannerContent.css('top', subTitleCenterAdjust + 'px');
       }
 
