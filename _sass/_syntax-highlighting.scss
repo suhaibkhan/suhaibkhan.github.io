@@ -16,6 +16,7 @@
     table {
       border: 1px solid $grey-color-light;
       border-radius: 3px;
+      overflow: hidden;
       table-layout: fixed;
       width: 100%;
       td {
@@ -23,6 +24,11 @@
         padding: 0;
         &.gutter{
           width: 50px;
+        }
+        &.code {
+          pre{
+            width: 100%;
+          }
         }
         pre {
           border: none;
