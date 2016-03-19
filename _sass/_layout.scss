@@ -114,7 +114,8 @@
      opacity: 0;
      margin: 1.5 * $spacing-unit $sidebar-init-width + 20px 1.5 * $spacing-unit 20px;
      .round-button {
-       font-size: 15px;
+       font-size: 13px;
+       line-height: 1.8em;
        vertical-align: text-top;
      }
    }
