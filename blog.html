@@ -8,6 +8,6 @@ order: 2
 </header>
 {% for post in site.posts %}
 <article class="postlink">
-    <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2><p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
+    <h2 class="header"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2><p class="date">{{ post.date | date: "%B %-d, %Y" }}</p>
 </article>
 {% endfor %}
