@@ -5,7 +5,6 @@ date:   2012-10-25 18:00:00 +0530
 [Interview Street][interviewstreet] has a nice set of challenging programming problems which surely helps to improve our programming skills. Last night i was trying to solve a problem named `Find Strings` under the `String Processing` challenges and ended up with the following solution coded in java. You can find the problem statement [here][problem-link].
 
 ```java
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -63,7 +62,6 @@ public class Solution {
     }
 }
 ```
-
 Even though this one works (only for 3/7 of their testcases), i have to find a faster method to solve this problem with in the time limit.
 
 [interviewstreet]: https://www.interviewstreet.com/

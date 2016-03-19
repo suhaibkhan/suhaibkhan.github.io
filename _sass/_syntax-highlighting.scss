@@ -5,8 +5,31 @@
     background: #fff;
     @extend %vertical-rhythm;
 
+    pre {
+      margin-bottom: 0;
+      &.lineno{
+        background-color: lighten($grey-color-light, 8%);
+      }
+    }
+
+    // code block with line nos
+    table {
+      border: 1px solid $grey-color-light;
+      border-radius: 3px;
+      width: 100%;
+      td {
+        vertical-align: top;
+        padding: 0;
+        pre {
+          border: none;
+        }
+      }
+    }
+
+
+
     .highlighter-rouge & {
-      background: lighten($grey-color-light, 8%);
+      //background: lighten($grey-color-light, 8%);
     }
 
     .c     { color: #998; font-style: italic } // Comment
