@@ -11,7 +11,6 @@ After reading that article, i thought of implementing a PowerPoint viewer that c
 The main part of the C# code :
 
 ```csharp
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -134,7 +133,6 @@ namespace PPT_Viewer
         }
     }
 }
-
 ```
 
 **Note** : This is only the code of the main form (i don’t think other parts of the code are needed as they are automatically added by Visual Studio) in the application. You need to add System.Speech(.NET) and Microsoft PowerPoint Object library(COM) as reference in order to use the above code.
