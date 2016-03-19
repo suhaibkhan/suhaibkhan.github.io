@@ -3,7 +3,6 @@
  */
 .highlight {
     background: #fff;
-    overflow: auto;
     @extend %vertical-rhythm;
 
     pre {
@@ -17,7 +16,7 @@
     table {
       border: 1px solid $grey-color-light;
       border-radius: 3px;
-      //table-layout: fixed;
+      table-layout: fixed;
       width: 100%;
       td {
         vertical-align: top;

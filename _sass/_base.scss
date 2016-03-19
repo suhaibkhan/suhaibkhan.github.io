@@ -157,11 +157,11 @@ code {
 
 pre {
     padding: 8px 8px;
-    //overflow-x: auto;
+    overflow-x: auto;
 
     @include media-query($on-palm) {
-      //overflow-x: scroll;
-      //-webkit-overflow-scrolling: touch;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
     }
 
     > code {
