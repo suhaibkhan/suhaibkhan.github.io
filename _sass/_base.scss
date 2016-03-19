@@ -161,6 +161,7 @@ pre {
 
     @include media-query($on-palm) {
       overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
     }
 
     > code {
