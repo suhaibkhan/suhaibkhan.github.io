@@ -159,6 +159,10 @@ pre {
     padding: 8px 8px;
     overflow-x: auto;
 
+    @include media-query($on-palm) {
+      overflow-x: scroll;
+    }
+
     > code {
         border: 0;
         padding-right: 0;
