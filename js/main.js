@@ -29,7 +29,6 @@ $(function(){
   }
 
   $('#menuBtn').click(function(){
-    //$('body').css('overflow', 'hidden'); // disable scrolling
     $sidebar.velocity({'right' : 0});
     $sidebar.addClass('visible');
     $containerOverlay.show();
