@@ -1,54 +1,43 @@
-
 # Site settings
-title: "Suhaib Khan"
-description: "Software Engineer, Open Source Enthusiast"
-baseurl: "" # e.g. /blog
-url: "http://suhaibkhan.github.io"
+title: 'Suhaib Khan'
+description: 'Software Engineer, Open Source Enthusiast'
+url: 'http://suhaibkhan.github.io'
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
 
 author:
-  name: "Suhaib Khan"
+  name: 'Suhaib Khan'
   email: suhaibkhan@gmail.com
-  github_url:  "https://github.com/suhaibkhan"
-  linkedin_url: "https://in.linkedin.com/in/suhaibkhans"
-  facebook_url: "https://www.facebook.com/suhaibkhan.s"
-  googleplus_url: "https://plus.google.com/117492144186891134145"
+  facebook_username: suhaibkhan.s
+  github_username:  suhaibkhan
+  linkedin_username:  suhaibkhans
 
 defaults:
   -
     scope:
-      path: ""
+      path: ''
+      type: 'posts'
     values:
-      layout: "default"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      is_post: true
-      author: "Suhaib Khan"
-
+        layout: 'post'
 
 # Build settings
+destination: _site
+paginate: 10
 permalink: /:year/:month/:title.html
 markdown: kramdown
 highlighter: rouge
 timezone: Asia/Calcutta
 
 kramdown:
-  # Github Flavored Markdown
+  # use Github Flavored Markdown
   input: GFM
-  # do not replace newlines by <br>
+  # do not replace newlines by <br>s
   hard_wrap: false
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: true
+      line_numbers: false
 
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

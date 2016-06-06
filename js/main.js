@@ -1,116 +1,35 @@
+---
+layout: null
+---
+$(document).ready(function () {
+  $('a.blog-button').click(function (e) {
+    if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
+    currentWidth = $('.panel-cover').width()
+    if (currentWidth < 960) {
+      $('.panel-cover').addClass('panel-cover--collapsed')
+      $('.content-wrapper').addClass('animated slideInRight')
+    } else {
+      $('.panel-cover').css('max-width', currentWidth)
+      $('.panel-cover').animate({'max-width': '530px', 'width': '40%'}, 400, swing = 'swing', function () {})
+    }
+  })
 
-
-$(function(){
-
-  var $window = $(window);
-  var $container = $('#container');
-  var $containerOverlay = $('#containerOverlay');
-  var $sidebar = $('#sidebar');
-
-  var sidebarDefaultRight = $sidebar.css('right');
-  var sidebarWidth = $sidebar.width();
-
-  var bannerPresent = false, $bannerTitle = null, $bannerContent = null;
-  var $banner = $('#banner');
-  if ($banner.length > 0){
-    bannerPresent = true;
-    $bannerTitle = $banner.find('.title');
-    $bannerContent = $banner.find('#bannercontent');
-
-    // hide sidebar for slide in animation in home
-    $sidebar.css('right', (-sidebarWidth) + 'px');
-    $sidebar.css('opacity', '1');
+  if (window.location.hash && window.location.hash == '#blog') {
+    $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
-  var contentPresent = false;
-  var $containerContent = $('#containerContent');
-  if ($containerContent.length > 0){
-    contentPresent = true;
+  if (window.location.pathname !== '{{ site.baseurl }}' && window.location.pathname !== '{{ site.baseurl }}index.html') {
+    $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
-  $('#menuBtn').click(function(){
-    $sidebar.velocity({'right' : 0});
-    $sidebar.addClass('visible');
-    $containerOverlay.show();
-    if (bannerPresent){
-      $banner.addClass('blur');
-    }
-    if(contentPresent){
-      $containerContent.addClass('blur');
-    }
-  });
+  $('.btn-mobile-menu').click(function () {
+    $('.navigation-wrapper').toggleClass('visible animated bounceInDown')
+    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
+  })
 
-  $('#menuCloseBtn').click(function(){
-    //$('body').css('overflow', '');
-    $sidebar.velocity({'right' : sidebarDefaultRight});
-    $sidebar.removeClass('visible');
-    $containerOverlay.hide();
-    if (bannerPresent){
-      $banner.removeClass('blur');
-    }
-    if(contentPresent){
-      $containerContent.removeClass('blur');
-    }
-  });
+  $('.navigation-wrapper .blog-button').click(function () {
+    $('.navigation-wrapper').toggleClass('visible')
+    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
+  })
 
-  $containerOverlay.click(function(){
-    $('#menuCloseBtn').trigger('click');
-  });
-
-  $window.load(function() {
-
-    var $containerBac = $('#containerBac');
-    var bacImagePresent = false, aspectRatio = 0;
-    if ($containerBac.length > 0){
-      bacImagePresent = true;
-      aspectRatio = $containerBac.width() / $containerBac.height();
-    }
-
-    $window.resize(function(){
-      if (bacImagePresent){
-        if (($window.width() / $window.height()) < aspectRatio){
-          $containerBac.removeClass().addClass('bgheight');
-        }else{
-          $containerBac.removeClass().addClass('bgwidth');
-        }
-      }
-
-      var sideCenterAdjust = Math.max($('#menuCloseBtn').outerHeight(true),
-        Math.floor(($sidebar.height()/2) - ($sidebar.find('#sidebar-content').height()/2)));
-      $sidebar.find('#sidebar-content').css('top', sideCenterAdjust + 'px');
-
-      if (bannerPresent){
-        var subTitleCenterAdjust =
-          Math.floor((($banner.height() - $bannerContent.outerHeight(true))/2));
-        $bannerContent.css('top', subTitleCenterAdjust + 'px');
-      }
-
-    }).trigger('resize');
-
-    if (bannerPresent){
-
-      // hide loading
-      $('#containerLoading').hide();
-
-      var subTitle = $bannerTitle.find('a').text();
-      $bannerTitle.css('opacity', 1).find('a').html('');
-      $bannerTitle.find('a').typed({
-        strings: [subTitle],
-        cursorChar: '|',
-        typeSpeed: 100,
-        onStringTyped: function() {
-          $bannerTitle.find('.typed-cursor').hide();
-
-          // slide in sidebar
-          $sidebar.velocity({'right' : sidebarDefaultRight});
-
-          $banner.find('.description').velocity({'opacity' : 1, 'margin-top' : 0}, function(){
-            $banner.find('.social-links').css('opacity', 1);
-          });
-        }
-      });
-    }
-
-  });
-
-});
+})

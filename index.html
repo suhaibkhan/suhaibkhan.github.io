@@ -1,28 +1,24 @@
 ---
 layout: default
-title: Home
-order: 1
 ---
 
-<div id="container">
-  <div id="containerLoading">
-    <div class="vertical-align-fix"></div><div class="spinner"></div>
-  </div>
-  <div id="bannerBac"></div>
-  <img id="containerBac" src="images/DSC_5001_bw.jpg" alt="" />
-  <div id="containerOverlay"></div>
+<div class="main-post-list">
 
-  <div id="banner">
-    <div id="bannercontent">
-      <h1 class="title"><a href="{{ page.url | prepend: site.baseurl }}">Hi, I'm {{ site.title }}.</a></h2>
-      <h2 class="description">{{ site.description }}</h1>
-      {% include social-links.html showbloglink=true %}
-    </div>
-  </div>
+  <ol class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}&hellip;</p>
+        <div class="post-list__meta"><time datetime="{{ post.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time> {% if post.tags != empty %} &#8226; <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span> {% endif %} </div>
+        <hr class="post-list__divider">
+      </li>
+    {% endfor %}
+  </ol>
 
-  {% include sidebar.html style="opacity: 0" %}
+  <hr class="post-list__divider ">
+
+  {% if paginator.previous_page or paginator.next_page %}
+      {% include pagination.html %}
+  {% endif %}
 
 </div>
-
-<script src="js/typed.min.js"></script>
-<script src="js/main.js"></script>

@@ -2,9 +2,9 @@
 title: "Controlling PowerPoint Presentations with Speech"
 date:   2011-08-15 23:22:00 +05:30
 ---
-{% include image.html src="/images/ppt_viewer.png" align="center" caption="Screenshot of the PowerPoint Viewer programmed by me" %}
-
 Today morning, I found an article on MSDN about the [Speech Recognition API][speech-api] in .net. Using this API we can implement speech recognition in our applications with a few lines of code. Actually this API uses built in speech recognition engines on Windows Vista and Windows 7. For XP users there is one that comes with Microsoft Office 2003, we have to install that or any other compatible speech recognition engines for using the speech API.
+
+{% include image.html src="images/ppt_viewer.png" align="center" caption="Screenshot of the PowerPoint Viewer programmed by me" %}
 
 After reading that article, i thought of implementing a PowerPoint viewer that can recognize speech, as there is a seminar in this (7th) semester of B.TECH as the part of the course and for that we all need a PowerPoint presentation. That’s where i got this idea of implementing a speech controlled PowerPoint Viewer. Even though it’s possible in Microsoft Office PowerPoint, i decided to program the same just to learn about that speech API. With the help of this speech API and Microsoft PowerPoint Object library, i programmed my own speech controlled PowerPoint viewer with in an hour in my favorite programming language C Sharp. My program recognizes two commands; on saying "next slide" it goes to next slide and on saying "previous slide" it goes one slide back.
 
