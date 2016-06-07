@@ -65,4 +65,4 @@ public class Solution {
 Even though this one works (only for 3/7 of their testcases), i have to find a faster method to solve this problem with in the time limit.
 
 [interviewstreet]: https://www.interviewstreet.com/
-[problem-link]: https://www.interviewstreet.com/challenges/dashboard/#problem/4efa210eb70ac
+[problem-link]: https://www.hackerrank.com/challenges/find-strings
