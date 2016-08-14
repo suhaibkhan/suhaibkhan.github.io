@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highest-grossing Malayalam films</title>
+
+    <style>
+      html, body{
+        margin : 0;
+        padding: 0;
+        background-color: #333;
+      }
+      circle {
+        stroke: steelblue;
+        stroke-width: 5px;
+        cursor: pointer;
+      }
+      circle:hover {
+        stroke: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+
+      var margin = {top: 10, right: 10, bottom: 10, left: 10};
+
+      var container = document.getElementById('container');
+
+      var width = window.innerWidth - margin.left - margin.right;
+      var height = window.innerHeight - margin.top - margin.bottom;
+
+      var bubble = d3.layout.pack()
+        .sort(null)
+        .size([width, height])
+        .padding(10);
+
+      var svgContainer = d3.select(container)
+        .style('width', width + margin.left + margin.right)
+        .style('height', height + margin.top + margin.bottom)
+      .append('svg')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom);
+
+      var defs = svgContainer.append('svg:defs');
+
+      var svg = svgContainer.append('g')
+        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+      d3.json('movie.json', function(err, movieData){
+
+        // append image
+        defs.selectAll('pattern')
+          .data(movieData)
+        .enter().append('svg:pattern')
+          .attr('id', function(d){ return d.name.replace(/ /g,'');})
+          .attr('patternContentUnits', 'objectBoundingBox')
+          .attr('preserveAspectRatio', 'xMidYMid slice')
+          .attr('viewBox', '0 0 1 1')
+          .attr('width', '100%')
+          .attr('height', '100%')
+        .append('svg:image')
+          .attr('xlink:href', function(d){ return d.image;})
+          .attr('preserveAspectRatio', 'xMidYMid slice')
+          .attr('width', '1')
+          .attr('height', '1');
+
+        bubble.value(function(d){
+          return d.collectionInCrore;
+        });
+
+        var node = svg.selectAll('.node')
+          .data(bubble.nodes({children: movieData})
+          .filter(function(d) { return !d.children; }))
+        .enter().append('g')
+          .attr('class', 'node')
+          .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+
+        node.append('circle')
+          .attr('r', function(d) { return d.r; })
+          .attr('fill', function(d) { return 'url(#' + d.name.replace(/ /g,'') + ')'; });
+
+      });
+
+    </script>
+  </body>
+</html>
